@@ -1,0 +1,4 @@
+playsound
+gTTS
+speechrecognition
+PyAudio-0.2.11
