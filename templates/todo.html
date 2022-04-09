@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>To do app</title>
+{% endblock title %}
+
+{% block jsfiles %}
+    <script src="{{url_for('static', filename='js/todo.js')}}"></script>
+{% endblock jsfiles %}
+
+{% block body %}
+    <p class="h2">This is to do block.</p>
+{% endblock body %}
