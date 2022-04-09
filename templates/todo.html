@@ -1,13 +1,43 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>To do app</title>
+<title>To do app</title>
 {% endblock title %}
 
 {% block jsfiles %}
-    <script src="{{url_for('static', filename='js/todo.js')}}"></script>
+<script src="{{url_for('static', filename='js/todo.js')}}"></script>
 {% endblock jsfiles %}
 
 {% block body %}
-    <p class="h2">This is to do block.</p>
+<p class="h2">This is to do block.</p>
+<div class="container-fluid">
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand text-primary">My Magic Notes</a>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </nav>
+
+    <section id="cardarea">
+        <div class="card  bg-light mb-3 w-75 mx-auto my-4">
+            <div class="card-body">
+                <!-- <div class="input-group"> -->
+                <h4 class="text-primary">Add title</h2>
+                    <textarea class="form-control" aria-label="With textarea" id="title"></textarea>
+                    <h4 class="text-primary">Notes</h2>
+                        <textarea class="form-control" aria-label="With textarea" id="textarea"></textarea>
+                        <!-- </div> -->
+                        <button type="button" class="btn btn-primary mt-2" id="addbtn">Add</button>
+            </div>
+        </div>
+
+        <hr class="bg-info">
+        <h3 class="text-info text-center">Your notes are displayed here.</h3>
+        <hr class="bg-info">
+
+        <div id="notearea"></div>
+
+    </section>
+</div>
 {% endblock body %}
