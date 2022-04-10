@@ -1,14 +1,54 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>Home</title>
+<title>Home</title>
 {% endblock title %}
 
-{% block jsfiles %}
+<!-- {% block jsfiles %}
 <script src="{{url_for('static', filename='js/index.js')}}" defer></script>
-{% endblock jsfiles %}
+{% endblock jsfiles %} -->
+
+{% block style %}
+<style>
+.example{
+    text-align:start ;
+    border: 1px solid black;
+
+}
+</style>
+{% endblock style %}
+
 
 {% block body %}
-<button id="checkBtn" class="btn btn-primary">Click me</button>
-<a href="/todo">Todo list</a>
+<div class="container">
+    <div class="row mt-3 bg-dark text-white p-3">
+        <div class="col-12 text-center">
+            <h1>INSTRUCTIONS</h1>
+        </div>
+    </div>
+    <div class="row mt-3 ">
+        <div class="col-12 p-3 bg-info text-black">
+            <p><span class="fw-bold">1st Command</span> </p>
+            <p><span class="fw-bold">OPEN</span> :- If you say OPEN some page, It will take you to that page.</p>
+            
+                <p>1st EXAMPLE: For Google -> You have to say Open google.</p>
+                <p>2nd EXAMPLE: For Youtube -> You have to say Open youtube.</p>
+                <p>3rd EXAMPLE: For Facebook -> You have to say Open Facebook.</p>
+            
+            <p><span class="fw-bold">2nd Command</span></p>
+            <p><span class="fw-bold">GO</span> :- If you say GO todo, It will take to you todo page.</p>
+            
+                <p>1st EXAMPLE: For todo page -> You have to say Go to Go todo.</p>
+                <p>2nd EXAMPLE: For Home page -> You have to say Go to Home.</p>
+            
+            <p><span class="fw-bold">3rd Command</span></p>
+            <p><span class="fw-bold">Search</span> :- If you say SEARCH some page, It will take you to that page.</p>
+            
+                <p>1st EXAMPLE: For someone profile -> You have to say Search someone profile.</p>
+                <p>2nd EXAMPLE: For anything -> You have to say Search that thing.</p>
+    
+        </div>
+    </div>
+</div>
+<!-- <a href="/todo">Todo list</a> -->
 {% endblock body %}

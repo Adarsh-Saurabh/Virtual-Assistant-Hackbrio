@@ -72,6 +72,13 @@ def updateTodo():
         flash("Record was updated successfully")
         return redirect(url_for("todo"))
 
+@app.route("/openApp")
+def openApp():
+    name = request.json()["name"]
+    name = name.replace(".", "")
+    os.system("start " + name)
+    return redirect(url_for("index"))
+
 
 
 @app.route('/cal')
