@@ -3,16 +3,12 @@
 {% block title %}
     <title>Home</title>
 {% endblock title %}
+
 {% block jsfiles %}
 <script src="{{url_for('static', filename='js/index.js')}}" defer></script>
 {% endblock jsfiles %}
 
 {% block body %}
-<div class="words" contenteditable>
-    <p id="p"></p>
-</div>
-
-<button id="openMic" class="btn btn-primary">Speak</button>
 <button id="checkBtn" class="btn btn-primary">Click me</button>
 <a href="/todo">Todo list</a>
 {% endblock body %}

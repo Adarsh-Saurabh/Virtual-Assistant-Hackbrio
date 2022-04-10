@@ -20,9 +20,40 @@
 </head>
 
 <body>
+    <nav class="d-flex p-3 align-items-center justify-content-around bg-dark text-white">
+        <input id="p" type="text" class="form-control fs-5"></input>
+        <button type="button" class="btn btn-primary px-5 mx-3 py-2" id="speakBtn">Speak</button>
+    </nav>
+
     {% block body %}
-    
+
     {% endblock body %}
 </body>
+
+<script>
+    const speakBtn = document.getElementById('speakBtn');
+    window.SpeechRecognition = window.SpeechRecognition
+        || window.webkitSpeechRecognition;
+
+    speakBtn.addEventListener('click', () => {
+
+        const recognition = new SpeechRecognition();
+
+        let transcript;
+
+        recognition.addEventListener('result', e => {
+            transcript = Array.from(e.results)
+                .map(result => result[0])
+                .map(result => result.transcript)
+                .join('')
+            
+            document.getElementById("p").value = transcript.toLowerCase();
+
+        });
+
+        recognition.start();
+    })
+
+</script>
 
 </html>
