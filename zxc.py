@@ -20,10 +20,13 @@ def get_audio():
         print('Listening...')
         audio = r.listen(source)
         said= ""
+        # speak()
+        print(said)
 
         try:
             said = r.recognize_google(audio)
             print(said)
+            spear(said)
         except Exception as e:
             print('Exception: ' + str(e))
 
@@ -33,4 +36,9 @@ def get_audio():
 # text = get_audio().lowercase()
 speak("Hello ") 
 
-get_audio()
+# get_audio()
+
+# # Audio to text
+# text = get_audio().lower()
+# # audio to text function using speech recognition
+
