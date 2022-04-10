@@ -16,6 +16,7 @@
     {% block title %}{% endblock title %}
     {% block stylesheets %}{% endblock stylesheets %}
     {% block jsfiles %}{% endblock jsfiles %}
+    {% block style %}{% endblock style %}
 
 </head>
 
@@ -93,6 +94,10 @@
                     window.open("https://www.netflix.com/", "_blank");
                 else if (transcript.value.includes("spotify"))
                     window.open("https://www.spotify.com/", "_blank");
+                else if (transcript.value.includes("flipcart"))
+                    window.open("https://www.flipcart.com/", "_blank");
+               
+
 
             }
             else if (transcript.value.includes("go")) {
