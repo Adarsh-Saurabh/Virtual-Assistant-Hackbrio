@@ -4,8 +4,6 @@ const transcript = document.getElementById('p');
 const titleInput = document.getElementById("title");
 const textInput = document.getElementById("textArea");
 
-console.log(transcript);
-
 const checkSpeech = setInterval(() => {
   if (transcript.value)
   {
