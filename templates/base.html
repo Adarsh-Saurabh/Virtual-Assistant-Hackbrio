@@ -46,12 +46,66 @@
                 .map(result => result[0])
                 .map(result => result.transcript)
                 .join('')
-            
+
             document.getElementById("p").value = transcript.toLowerCase();
 
         });
 
         recognition.start();
+    })
+
+    let transcript = document.getElementById("p");
+
+    let checkSpeech = setInterval(() => {
+        if (transcript.value) {
+            if (transcript.value.includes("open")) {
+                if (transcript.value.includes("google"))
+                    window.open("https://www.google.com/", "_blank");
+                else if (transcript.value.includes("youtube"))
+                    window.open("https://www.youtube.com/", "_blank");
+                else if (transcript.value.includes("facebook"))
+                    window.open("https://www.facebook.com/", "_blank");
+                else if (transcript.value.includes("twitter"))
+                    window.open("https://www.twitter.com/", "_blank");
+                else if (transcript.value.includes("instagram"))
+                    window.open("https://www.instagram.com/", "_blank");
+                else if (transcript.value.includes("github"))
+                    window.open("https://www.github.com/", "_blank");
+                else if (transcript.value.includes("linkedin"))
+                    window.open("https://www.linkedin.com/", "_blank");
+                else if (transcript.value.includes("pinterest"))
+                    window.open("https://www.pinterest.com/", "_blank");
+                else if (transcript.value.includes("reddit"))
+                    window.open("https://www.reddit.com/", "_blank");
+                else if (transcript.value.includes("quora"))
+                    window.open("https://www.quora.com/", "_blank");
+                else if (transcript.value.includes("stackoverflow"))
+                    window.open("https://www.stackoverflow.com/", "_blank");
+                else if (transcript.value.includes("wikipedia"))
+                    window.open("https://www.wikipedia.org/", "_blank");
+                else if (transcript.value.includes("amazon"))
+                    window.open("https://www.amazon.com/", "_blank");
+                else if (transcript.value.includes("ebay"))
+                    window.open("https://www.ebay.com/", "_blank");
+                else if (transcript.value.includes("twitch"))
+                    window.open("https://www.twitch.tv/", "_blank");
+                else if (transcript.value.includes("netflix"))
+                    window.open("https://www.netflix.com/", "_blank");
+                else if (transcript.value.includes("spotify"))
+                    window.open("https://www.spotify.com/", "_blank");
+
+            }
+            else if (transcript.value.includes("go")) {
+                if (transcript.value.includes("to do"))
+                    window.location.href = "/todo";
+                else if (transcript.value.includes("to home"))
+                    window.location.href = "/";
+                else if (transcript.value.includes("back"))
+                    window.history.go(-1);
+            }
+
+            transcript.value = null;
+        }
     })
 
 </script>
