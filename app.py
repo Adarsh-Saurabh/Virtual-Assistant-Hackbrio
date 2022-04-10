@@ -73,6 +73,12 @@ def updateTodo():
         return redirect(url_for("todo"))
 
 
+
+@app.route('/cal')
+def cal():
+    return render_template('cal.html')
+
+
 # Running the app
 if __name__ == "__main__":
     db.create_all()
