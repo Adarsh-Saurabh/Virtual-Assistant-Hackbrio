@@ -76,6 +76,7 @@ def updateTodo():
 def openApp():
     name = request.json()["name"]
     name = name.replace(".", "")
+    print(name)
     os.system("start " + name)
     return redirect(url_for("index"))
 
